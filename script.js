@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 console.log("jQuery is ready!");
 
-// Change Text
+
 $("#changeText").click(function() {
 
     $("#headline").text("Welcome to My Web Development Portfolio!");
@@ -13,7 +13,7 @@ $("#changeText").click(function() {
 });
 
 
-// Dark Theme
+
 $("#darkTheme").click(function() {
 
     $("body").addClass("dark-theme");
@@ -23,7 +23,7 @@ $("#darkTheme").click(function() {
 });
 
 
-// Light Theme
+
 $("#lightTheme").click(function() {
 
     $("body").removeClass("dark-theme");
@@ -32,7 +32,7 @@ $("#lightTheme").click(function() {
 
 });
 
-        // Task 2: Hide
+       
     $("#hideButton").click(function() {
 
         $("#status").hide();
@@ -42,7 +42,7 @@ $("#lightTheme").click(function() {
     });
 
 
-    // Task 2: Show
+  
     $("#showButton").click(function() {
 
         $("#status").show();
@@ -52,7 +52,6 @@ $("#lightTheme").click(function() {
     });
 
 
-    // Task 2: Toggle
     $("#toggleButton").click(function() {
 
         $("#status").toggle();
@@ -61,9 +60,6 @@ $("#lightTheme").click(function() {
 
     });
     
-// Task 3: Fade Methods
-
-// Fade In
 $("#fadeInButton").click(function() {
 
     $("#image1Box").fadeIn();
@@ -73,7 +69,7 @@ $("#fadeInButton").click(function() {
 });
 
 
-// Fade Out
+
 $("#fadeOutButton").click(function() {
 
     $("#image1Box").fadeOut();
@@ -83,7 +79,7 @@ $("#fadeOutButton").click(function() {
 });
 
 
-// Fade Toggle
+
 $("#fadeToggleButton").click(function() {
 
     $("#image1Box").fadeToggle();
@@ -92,9 +88,7 @@ $("#fadeToggleButton").click(function() {
 
 });
 
-        // Task 4: Slide Methods
 
-    // Music
     $("#musicTitle").click(function() {
 
         $("#musicPanel").slideToggle();
@@ -102,15 +96,13 @@ $("#fadeToggleButton").click(function() {
     });
 
 
-    // Movie
+
     $("#movieTitle").click(function() {
 
         $("#moviePanel").slideToggle();
 
     });
 
-
-    // Subject
     $("#subjectTitle").click(function() {
 
         $("#subjectPanel").slideToggle();
@@ -118,7 +110,6 @@ $("#fadeToggleButton").click(function() {
     });
 
 
-    // Slide Down Button
     $("#showAll").click(function() {
 
         $(".slidePanel").slideDown();
@@ -126,16 +117,12 @@ $("#fadeToggleButton").click(function() {
     });
 
 
-    // Slide Up Button
     $("#hideAll").click(function() {
 
         $(".slidePanel").slideUp();
 
     });
-    
-   // Task 5: Add & Remove Elements
 
-// Add Skill
 $("#addSkill").click(function() {
 
     var skill = $("#skillInput").val().trim();
@@ -151,7 +138,7 @@ $("#addSkill").click(function() {
 });
 
 
-// Prepend Skill
+
 $("#prependSkill").click(function() {
 
     var skill = $("#skillInput").val().trim();
@@ -167,14 +154,13 @@ $("#prependSkill").click(function() {
 });
 
 
-// Remove Skill
+
 $("#removeSkill").click(function() {
 
     $("#skillList li:last").remove();
 
 });
     
-        // Task 6: Modifying Attributes
 
     $("#changeLink").click(function() {
 
@@ -184,7 +170,7 @@ $("#removeSkill").click(function() {
 
     });
     
-        // Task 7: Form Interaction
+       
 
     $("#userName").keyup(function() {
 
@@ -203,7 +189,7 @@ $("#removeSkill").click(function() {
 
     });
     
-        // Task 8: Basic Animation
+       
 
     var animationStarted = false;
 
