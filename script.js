@@ -1,160 +1,248 @@
-"use strict";
+$(document).ready(function() {
 
 
+console.log("jQuery is ready!");
 
+// Change Text
+$("#changeText").click(function() {
 
-const userProfile = {
-    name: "Moheab",
-    birthYear: 2004,
-    isDeveloper: false,
-    hobbies: ["Gaming", "Music", "Football"]
-};
+    $("#headline").text("Welcome to My Web Development Portfolio!");
 
+    $(".intro").text("I am learning HTML, CSS, JavaScript and jQuery.");
 
-function calculateAge(birthYear) {
-    const currentYear = new Date().getFullYear();
-    return currentYear - birthYear;
-}
-
-function displayProfile() {
-    document.getElementById("name").textContent = userProfile.name;
-
-    document.getElementById("birthYear").textContent = userProfile.birthYear;
-
-    document.getElementById("age").textContent = calculateAge(userProfile.birthYear);
-
-    document.getElementById("developer").textContent = userProfile.isDeveloper;
-
-    document.getElementById("hobbies").textContent = userProfile.hobbies.join(", ");
-
-    document.getElementById("hobbyCount").textContent = userProfile.hobbies.length;
-}
-
-
-displayProfile();
-
-
-console.log("User Profile:", userProfile);
-console.log("Current Age:", calculateAge(userProfile.birthYear));
-console.log("Total Hobbies:", userProfile.hobbies.length);
-
-
-const profileForm = document.getElementById("profileForm");
-
-profileForm.addEventListener("submit", function (event) {
-    
-    event.preventDefault();
-
-    const usernameInput = document.getElementById("username");
-    const birthYearInput = document.getElementById("birthYearInput");
-    const message = document.getElementById("message");
-
-    const username = usernameInput.value.trim();
-    const birthYear = Number(birthYearInput.value);
-    const currentYear = new Date().getFullYear();
-
-   
-    if (username === "") {
-        message.textContent = "Please enter your username.";
-        message.style.color = "#dc2626";
-        return;
-    }
-
-    
-    if (
-        birthYearInput.value.trim() === "" ||
-        !Number.isInteger(birthYear) ||
-        birthYear < 1901 ||
-        birthYear > currentYear
-    ) {
-        message.textContent = "Please enter a valid birth year.";
-        message.style.color = "#dc2626";
-        return;
-    }
-
-    
-    userProfile.name = username;
-    userProfile.birthYear = birthYear;
-
-    
-    displayProfile();
-
-
-    message.textContent = "Profile updated successfully!";
-    message.style.color = "#15803d";
-
-   
-    console.log("Updated Profile:", userProfile);
 });
 
 
+// Dark Theme
+$("#darkTheme").click(function() {
+
+    $("body").addClass("dark-theme");
+
+    $("#headline").css("color", "#c7d2fe");
+
+});
 
 
-const itemList = document.getElementById("itemList");
-const newItemInput = document.getElementById("newItemInput");
-const addItemButton = document.getElementById("addItemButton");
-const removeItemButton = document.getElementById("removeItemButton");
+// Light Theme
+$("#lightTheme").click(function() {
 
+    $("body").removeClass("dark-theme");
 
-function createListItem(text) {
-    const newItem = document.createElement("li");
-    newItem.textContent = text;
-    return newItem;
-}
+    $("#headline").css("color", "");
 
+});
 
-function renderItemList() {
-    itemList.textContent = ""; 
+        // Task 2: Hide
+    $("#hideButton").click(function() {
 
-    userProfile.hobbies.forEach(function (hobby) {
-        itemList.appendChild(createListItem(hobby));
+        $("#status").hide();
+
+        $("#facts").hide();
+
     });
-}
 
 
-function addItem() {
-    const itemText = newItemInput.value.trim();
+    // Task 2: Show
+    $("#showButton").click(function() {
 
-    if (itemText === "") {
-        alert("Please enter a task or hobby first.");
-        newItemInput.focus();
-        return;
-    }
+        $("#status").show();
 
-    userProfile.hobbies.push(itemText);
-    itemList.appendChild(createListItem(itemText));
+        $("#facts").show();
 
-    displayProfile();
+    });
 
-    newItemInput.value = "";
-    newItemInput.focus();
 
-    console.log("Item added:", itemText);
-    console.log("Total Hobbies:", userProfile.hobbies.length);
-}
+    // Task 2: Toggle
+    $("#toggleButton").click(function() {
 
-function removeItem() {
-    if (userProfile.hobbies.length === 0) {
-        alert("There are no items to remove.");
-        return;
-    }
+        $("#status").toggle();
 
-    const removedItem = userProfile.hobbies.pop();
-    itemList.removeChild(itemList.lastElementChild);
+        $("#facts").toggle();
 
-    displayProfile();
+    });
+    
+// Task 3: Fade Methods
 
-    console.log("Item removed:", removedItem);
-    console.log("Total Hobbies:", userProfile.hobbies.length);
-}
+// Fade In
+$("#fadeInButton").click(function() {
 
-addItemButton.addEventListener("click", addItem);
-removeItemButton.addEventListener("click", removeItem);
+    $("#image1Box").fadeIn();
 
-newItemInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        addItem();
-    }
+    $("#image2Box").fadeIn();
+
 });
 
-renderItemList();
+
+// Fade Out
+$("#fadeOutButton").click(function() {
+
+    $("#image1Box").fadeOut();
+
+    $("#image2Box").fadeOut();
+
+});
+
+
+// Fade Toggle
+$("#fadeToggleButton").click(function() {
+
+    $("#image1Box").fadeToggle();
+
+    $("#image2Box").fadeToggle();
+
+});
+
+        // Task 4: Slide Methods
+
+    // Music
+    $("#musicTitle").click(function() {
+
+        $("#musicPanel").slideToggle();
+
+    });
+
+
+    // Movie
+    $("#movieTitle").click(function() {
+
+        $("#moviePanel").slideToggle();
+
+    });
+
+
+    // Subject
+    $("#subjectTitle").click(function() {
+
+        $("#subjectPanel").slideToggle();
+
+    });
+
+
+    // Slide Down Button
+    $("#showAll").click(function() {
+
+        $(".slidePanel").slideDown();
+
+    });
+
+
+    // Slide Up Button
+    $("#hideAll").click(function() {
+
+        $(".slidePanel").slideUp();
+
+    });
+    
+   // Task 5: Add & Remove Elements
+
+// Add Skill
+$("#addSkill").click(function() {
+
+    var skill = $("#skillInput").val().trim();
+
+    if (skill != "") {
+
+        $("#skillList").append("<li>" + skill + "</li>");
+
+        $("#skillInput").val("");
+
+    }
+
+});
+
+
+// Prepend Skill
+$("#prependSkill").click(function() {
+
+    var skill = $("#skillInput").val().trim();
+
+    if (skill != "") {
+
+        $("#skillList").prepend("<li>" + skill + "</li>");
+
+        $("#skillInput").val("");
+
+    }
+
+});
+
+
+// Remove Skill
+$("#removeSkill").click(function() {
+
+    $("#skillList li:last").remove();
+
+});
+    
+        // Task 6: Modifying Attributes
+
+    $("#changeLink").click(function() {
+
+        $("#githubLink").attr("href", "https://github.com/Rahmani-IT");
+
+        $("#githubLink").text("Visit My GitHub Profile");
+
+    });
+    
+        // Task 7: Form Interaction
+
+    $("#userName").keyup(function() {
+
+        var name = $("#userName").val();
+
+        $("#showName").text(name);
+
+    });
+
+
+    $("#userEmail").keyup(function() {
+
+        var email = $("#userEmail").val();
+
+        $("#showEmail").text(email);
+
+    });
+    
+        // Task 8: Basic Animation
+
+    var animationStarted = false;
+
+    $("#animateSkills").click(function() {
+
+        if (animationStarted == false) {
+
+            $("#htmlBar").animate({
+                width: "90%"
+            });
+
+            $("#cssBar").animate({
+                width: "80%"
+            });
+
+            $("#jsBar").animate({
+                width: "65%"
+            });
+
+            animationStarted = true;
+
+        } else {
+
+            $("#htmlBar").animate({
+                width: "0%"
+            });
+
+            $("#cssBar").animate({
+                width: "0%"
+            });
+
+            $("#jsBar").animate({
+                width: "0%"
+            });
+
+            animationStarted = false;
+
+        }
+
+    });
+    
+});

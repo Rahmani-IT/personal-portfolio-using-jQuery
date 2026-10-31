@@ -1,89 +1,289 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Basics - Assignment 5</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="script.js"></script>
+
+
 </head>
 <body>
 
-    <header>
-        <h1>My Personal Profile</h1>
-        <p>JavaScript Basics: DOM Manipulation & Events</p>
-    </header>
 
-    <main>
+<section class="profile">
 
-       
-        <section class="card">
-            <h2>Part 1: Personal Profile</h2>
+    <h1 id="name">Abdul Mobin Rahmani</h1>
 
-            <div id="profile">
-                <p><strong>Name:</strong> <span id="name"></span></p>
-                <p><strong>Birth Year:</strong> <span id="birthYear"></span></p>
-                <p><strong>Age:</strong> <span id="age"></span></p>
-                <p><strong>Developer:</strong> <span id="developer"></span></p>
-                <p><strong>Hobbies:</strong> <span id="hobbies"></span></p>
-                <p><strong>Total Hobbies:</strong> <span id="hobbyCount"></span></p>
-            </div>
-        </section>
+    <h2 id="headline">Welcome to My Portfolio</h2>
 
-       
-        <section class="card">
-            <h2>Part 2: Create / Update Profile</h2>
+    <p class="intro">
+        I am an IT student at Astana IT University.
+        I am learning web development and programming.
+    </p>
 
-            <form id="profileForm">
-                <label for="username">Username:</label>
-                <input
-                    type="text"
-                    id="username"
-                    placeholder="Enter your name"
-                    required
-                >
+    <button id="changeText">Change Text</button>
 
-                <label for="birthYearInput">Birth Year:</label>
-                <input
-                    type="number"
-                    id="birthYearInput"
-                    placeholder="Enter your birth year"
-                    min="1901"
-                    required
-                >
+    <button id="lightTheme">Light Theme</button>
 
-                <button type="submit">Create / Update Profile</button>
-            </form>
+    <button id="darkTheme">Dark Theme</button>
 
-            <p id="message" role="status"></p>
-        </section>
+</section>
 
-        
-        <section class="card">
-            <h2>Part 3: My Tasks and Hobbies</h2>
+<!-- Task 2: About Me -->
 
-            <div class="item-controls">
-                <label for="newItemInput">New Task or Hobby:</label>
+<section class="about">
 
-                <input
-                    type="text"
-                    id="newItemInput"
-                    placeholder="Enter a task or hobby"
-                >
+    <h2>About Me</h2>
 
-                <button type="button" id="addItemButton">Add Item</button>
-                <button type="button" id="removeItemButton">Remove Item</button>
-            </div>
+    <p>
+        My name is Abdul Mobin Rahmani.
+        I am an IT student at Astana IT University.
+        I am interested in programming and web development.
+    </p>
 
-           
-            <ul id="itemList"></ul>
-        </section>
+    <h3>My Current Status</h3>
 
-    </main>
+    <p id="status">
+        Currently learning jQuery 
+    </p>
 
-    <footer>
-        <p>Assignment #5 — JavaScript Basics</p>
-    </footer>
+    <h3>My Fun Facts</h3>
 
-    <script src="script.js"></script>
+    <ul id="facts">
+
+        <li>I am learning web development.</li>
+
+        <li>I enjoy programming.</li>
+
+        <li>My goal is to become a software developer.</li>
+
+    </ul>
+
+    <button id="hideButton">Hide</button>
+
+    <button id="showButton">Show</button>
+
+    <button id="toggleButton">Toggle</button>
+
+</section>
+    
+    <!-- Task 3: Fade Methods -->
+
+<section class="gallery">
+
+    <h2>My Gallery</h2>
+
+    <p>Here are some of my interests and favorite activities.</p>
+
+    <div class="galleryImages">
+
+        <div class="galleryItem" id="image1Box">
+            <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600"
+            alt="Programming">
+
+            <h3>Programming</h3>
+            <p>Learning coding and developing websites.</p>
+        </div>
+
+        <div class="galleryItem" id="image2Box">
+            <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600"
+            alt="Technology">
+
+            <h3>Technology</h3>
+            <p>Exploring new technologies and IT innovations.</p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <button id="fadeInButton">Fade In</button>
+
+    <button id="fadeOutButton">Fade Out</button>
+
+    <button id="fadeToggleButton">Fade Toggle</button>
+
+</section>
+    
+    <!-- Task 4: Slide Methods -->
+
+<section class="favorites">
+
+    <h2>My Favorites</h2>
+    
+    <button id="showAll">Show All</button>
+
+    <button id="hideAll">Hide All</button>
+
+    <h3 class="slideTitle" id="musicTitle">
+        My Favorite Music
+    </h3>
+
+    <div class="slidePanel" id="musicPanel">
+        <p>
+            I listening to music during coding.
+            it helps me to focus.
+        </p>
+    </div>
+
+
+    <h3 class="slideTitle" id="movieTitle">
+        My Favorite Movie
+    </h3>
+
+    <div class="slidePanel" id="moviePanel">
+        <p>
+            I like to watching Horror films and films based on true stories.
+        </p>
+    </div>
+
+
+    <h3 class="slideTitle" id="subjectTitle">
+        My Favorite Subject
+    </h3>
+
+    <div class="slidePanel" id="subjectPanel">
+        <p>
+            My favorite subject is Computer Science.
+            I learning programming to solving problems.
+        </p>
+    </div>
+
+</section>
+    
+    <!-- Task 5: Add & Remove Elements -->
+
+<section class="skills">
+
+    <h2>My Technical Skills</h2>
+
+    <ul id="skillList">
+
+        <li>HTML</li>
+
+        <li>CSS</li>
+
+        <li>JavaScript</li>
+
+        <li>jQuery</li>
+
+    </ul>
+
+    <input type="text" id="skillInput" placeholder="Enter a new skill">
+
+    <br><br>
+
+    <button id="addSkill">Add Skill</button>
+
+    <button id="prependSkill">Prepend Skill</button>
+
+    <button id="removeSkill">Remove Skill</button>
+
+</section>
+    
+    <!-- Task 6: Modifying Attributes -->
+
+<section class="social">
+
+    <h2>My Social Media</h2>
+
+    <p>Visit my GitHub profile:</p>
+
+    <a id="githubLink"
+       href="https://github.com/"
+       target="_blank">
+        GitHub
+    </a>
+
+    <br><br>
+
+    <button id="changeLink">Change GitHub Link</button>
+
+</section>
+    
+    <!-- Task 7: Form Interaction -->
+
+<section class="contact">
+
+    <h2>Contact Form</h2>
+
+    <form id="myForm">
+
+        <label for="userName">Name:</label>
+        <br>
+
+        <input type="text" id="userName" placeholder="Enter your name">
+
+        <br><br>
+
+        <label for="userEmail">Email:</label>
+        <br>
+
+        <input type="email" id="userEmail" placeholder="Enter your email">
+
+    </form>
+
+    <h3>Live Preview</h3>
+
+    <p>Name: <span id="showName"></span></p>
+
+    <p>Email: <span id="showEmail"></span></p>
+
+</section>
+    
+    <!-- Task 8: Basic Animation -->
+
+<section class="animation">
+
+    <h2>My Skill Levels</h2>
+
+    <div class="skill">
+
+        <p>HTML</p>
+
+        <div class="skillBackground">
+            <div class="skillBar" id="htmlBar"></div>
+        </div>
+
+    </div>
+
+
+    <div class="skill">
+
+        <p>CSS</p>
+
+        <div class="skillBackground">
+            <div class="skillBar" id="cssBar"></div>
+        </div>
+
+    </div>
+
+
+    <div class="skill">
+
+        <p>JavaScript</p>
+
+        <div class="skillBackground">
+            <div class="skillBar" id="jsBar"></div>
+        </div>
+
+    </div>
+
+
+    <br>
+
+    <button id="animateSkills">Animate My Skills</button>
+
+</section>
+    
 </body>
 </html>
